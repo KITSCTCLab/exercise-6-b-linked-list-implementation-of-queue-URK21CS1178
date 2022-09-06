@@ -11,25 +11,47 @@ class Queue:
 
   def enqueue(self, data) -> None:
     # Write your code here
-      temp = Node(item)
-          
-        if self.rear == None:
-            self.front = self.rear = temp
-            return
-        self.rear.next = temp
-        self.rear = temp
+      if(is_full(q)) {
+  printf("Queue Overflow\n");
+}
+else {
+  q->Q[q->tail] = x;
+  if(q->tail == q->size)
+    q->tail = 1;
+  else
+    q->tail = q->tail+1;
+}
+}
         
   def dequeue(self) -> None:
     # Write your code here
-         return
-        temp = self.front
-        self.front = temp.next
-  
-        if(self.front == None):
-            self.rear = None
+    if(is_empty(q)) {
+  printf("Underflow\n");
+  return -1000;
+}
+else {
+  int x = q->Q[q->head];
+  if(q->head == q->size) {
+    q->head = 1;
+  }
+  else {
+    q->head = q->head+1;
+  }
+  return x;
+}
+}
+        
   
   def status(self) -> None:
     # Write your code here
+    int i;
+for(i=q->head; i<q->tail; i++) {
+  printf("%d\n",q->Q[i]);
+  if(i == q->size) {
+    i = 0;
+  }
+}
+}
      
 if __name__ == '__main__':
  
