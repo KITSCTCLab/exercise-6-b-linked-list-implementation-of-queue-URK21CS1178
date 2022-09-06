@@ -11,48 +11,23 @@ class Queue:
 
   def enqueue(self, data) -> None:
     # Write your code here
-     # allocate the node in a heap
-        node = Node(item)
-        print('Inserting…', item)
- 
-        # special case: queue was empty
-        if self.front is None:
-            # initialize both front and rear
-            self.front = node
-            self.rear = node
-        else:
-            # update rear
-            self.rear.next = node
-            self.rear = node
- 
-        # increase the node's count by 1
-        self.count += 1
- 
-    # Utility function to return the top element in a queue
-
+      temp = Node(item)
+          
+        if self.rear == None:
+            self.front = self.rear = temp
+            return
+        self.rear.next = temp
+        self.rear = temp
+        
   def dequeue(self) -> None:
     # Write your code here
- if self.front is None:
-            print('Queue Underflow')
-            exit(-1)
- 
+         return
         temp = self.front
-        print('Removing…', temp.data)
- 
-        # advance front to the next node
-        self.front = self.front.next
- 
-        # if the list becomes empty
-        if self.front is None:
+        self.front = temp.next
+  
+        if(self.front == None):
             self.rear = None
- 
-        # decrease the node's count by 1
-        self.count -= 1
- 
-        # return the removed item
-        return temp.data
- 
-
+  
   def status(self) -> None:
     # Write your code here
      
