@@ -11,36 +11,26 @@ class Queue:
 
   def enqueue(self, data) -> None:
     # Write your code here
-      if(is_full(q)) {
-  printf("Queue Overflow\n");
-}
-else {
-  q->Q[q->tail] = x;
-  if(q->tail == q->size)
-    q->tail = 1;
-  else
-    q->tail = q->tail+1;
-}
-}
+      new_node = Node(value)
+        # if empty, assign new node to head and tail
+        if self._size == 0:
+            self._head = new_node
+        # if not empty, make the tail reference the new node
+        # so that the new node will become the tail
+        else:
+            self._tail.next = new_node
+        self._tail = new_node
+        self._size += 1
         
   def dequeue(self) -> None:
     # Write your code here
-    if(is_empty(q)) {
-  printf("Underflow\n");
-  return -1000;
-}
-else {
-  int x = q->Q[q->head];
-  if(q->head == q->size) {
-    q->head = 1;
-  }
-  else {
-    q->head = q->head+1;
-  }
-  return x;
-}
-}
-        
+ if self._size == 0:
+            raise Exception("Queue is empty")
+
+        val = self._head.value          # the value to be return
+        self._head = self._head.next    # remove the head
+        self._size -= 1                 # decrease the size by 1
+        return val
   
   def status(self) -> None:
     # Write your code here
